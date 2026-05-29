@@ -35,36 +35,167 @@ C = {
 }
 
 HOUSEHOLDS = [
-    {"id": "HOG-01", "nombre": "Rosa M.",            "edad": 67, "composicion": "Pensionista, vive sola",
+    # ── VULNERABILIDAD CRÍTICA (I1 muy bajo, múltiples señales) ──────────────
+    {"id": "HOG-01", "nombre": "Rosa M.",             "edad": 67, "composicion": "Pensionista, vive sola",
      "desc": "Pensionista mínima. Piso de alquiler antiguo. Concentrador O₂ nocturno.",
-     "I1": 530,  "I2": 1, "I3": 18.2, "I4": 1, "I11": 1, "I12": 0, "ground_truth": 1},
-    {"id": "HOG-02", "nombre": "Antonio e Grazia B.", "edad": 72, "composicion": "Pareja jubilados",
-     "desc": "Dos pensiones mínimas combinadas. Sin deudas energéticas. Reciben bonus gas.",
-     "I1": 820,  "I2": 1, "I3": 11.4, "I4": 0, "I11": 1, "I12": 0, "ground_truth": 1},
+     "I1": 530,  "I3": 18.2, "I4": 1, "I11": 1, "I12": 0, "ground_truth": 1},
+    {"id": "HOG-02", "nombre": "Carmela V.",          "edad": 81, "composicion": "Anciana sola, tutela Fundación",
+     "desc": "Pensión social mínima. Deuda histórica con comercializadora. Sin microcrédito.",
+     "I1": 460,  "I3": 24.1, "I4": 1, "I11": 1, "I12": 0, "ground_truth": 1},
     {"id": "HOG-03", "nombre": "Fatima O.",           "edad": 34, "composicion": "Madre sola, 2 hijos menores",
      "desc": "Trabajo informal, ingresos irregulares. Corte de luz hace 8 meses.",
-     "I1": 490,  "I2": 1, "I3": 22.7, "I4": 1, "I11": 0, "I12": 1, "ground_truth": 1},
-    {"id": "HOG-04", "nombre": "Marco e Lucia F.",    "edad": 45, "composicion": "Pareja, 1 hijo",
-     "desc": "Desempleo reciente. ISEE actualizado. Sin cortes aún pero deuda acumulada.",
-     "I1": 710,  "I2": 1, "I3": 14.8, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 1},
-    {"id": "HOG-05", "nombre": "Salvatore C.",        "edad": 58, "composicion": "Solo, trabajador precario",
-     "desc": "Ingresos bajos pero estables. Gasto energético moderado. Sin ayudas formales.",
-     "I1": 850,  "I2": 0, "I3":  8.9, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
+     "I1": 490,  "I3": 22.7, "I4": 1, "I11": 0, "I12": 1, "ground_truth": 1},
+    {"id": "HOG-04", "nombre": "Vincenzo P.",         "edad": 74, "composicion": "Solo, pensión invalidez",
+     "desc": "Pensión de invalidez parcial. Piso propio en mal estado. Corte hace 3 meses.",
+     "I1": 510,  "I3": 21.3, "I4": 1, "I11": 1, "I12": 0, "ground_truth": 1},
+    {"id": "HOG-05", "nombre": "Amina B.",            "edad": 28, "composicion": "Madre sola, 3 hijos pequeños",
+     "desc": "Recién llegada. Trabajo en negro esporádico. Sin ninguna ayuda formal registrada.",
+     "I1": 380,  "I3": 29.4, "I4": 1, "I11": 0, "I12": 0, "ground_truth": 1},
     {"id": "HOG-06", "nombre": "Concetta e figli",    "edad": 39, "composicion": "Madre sola, 3 hijos",
      "desc": "Renta de ciudadanía (RdC) activa. Alta carga energética por piso deficiente.",
-     "I1": 640,  "I2": 1, "I3": 19.5, "I4": 1, "I11": 1, "I12": 1, "ground_truth": 1},
-    {"id": "HOG-07", "nombre": "Giuseppe N.",         "edad": 29, "composicion": "Solo, empleado",
-     "desc": "Contrato fijo desde este año. ISEE algo bajo pero situación estabilizándose.",
-     "I1": 940,  "I2": 0, "I3":  7.2, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
-    {"id": "HOG-08", "nombre": "Carmela V.",          "edad": 81, "composicion": "Anciana sola, tutela Fundación",
-     "desc": "Pensión social mínima. Deuda histórica con comercializadora. Sin microcrédito.",
-     "I1": 460,  "I2": 1, "I3": 24.1, "I4": 1, "I11": 1, "I12": 0, "ground_truth": 1},
-    {"id": "HOG-09", "nombre": "Emanuele e Sandra R.","edad": 51, "composicion": "Pareja, hijos independientes",
-     "desc": "Ambos con trabajo a tiempo parcial. ISEE limítrofe. Situación estable.",
-     "I1": 1050, "I2": 0, "I3":  9.1, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
-    {"id": "HOG-10", "nombre": "Nadia T.",            "edad": 44, "composicion": "Sola, desempleada larga duración",
+     "I1": 640,  "I3": 19.5, "I4": 1, "I11": 1, "I12": 1, "ground_truth": 1},
+    {"id": "HOG-07", "nombre": "Pietrina e Rocco A.", "edad": 78, "composicion": "Pareja ancianos, ambos dependientes",
+     "desc": "Dos pensiones sociales. Piso sin calefacción central. Tutela parcial del municipio.",
+     "I1": 490,  "I3": 26.8, "I4": 0, "I11": 1, "I12": 0, "ground_truth": 1},
+    {"id": "HOG-08", "nombre": "Moussa D.",           "edad": 31, "composicion": "Solo, solicitante asilo",
+     "desc": "Acogida temporal. Sin ingresos propios. Centro de acogida cubre alojamiento.",
+     "I1": 290,  "I3": 31.0, "I4": 0, "I11": 1, "I12": 1, "ground_truth": 1},
+
+    # ── VULNERABILIDAD ALTA ───────────────────────────────────────────────────
+    {"id": "HOG-09", "nombre": "Antonio e Grazia B.", "edad": 72, "composicion": "Pareja jubilados",
+     "desc": "Dos pensiones mínimas combinadas. Sin deudas energéticas. Reciben bonus gas.",
+     "I1": 820,  "I3": 11.4, "I4": 0, "I11": 1, "I12": 0, "ground_truth": 1},
+    {"id": "HOG-10", "nombre": "Marco e Lucia F.",    "edad": 45, "composicion": "Pareja, 1 hijo",
+     "desc": "Desempleo reciente. ISEE actualizado. Sin cortes aún pero deuda acumulada.",
+     "I1": 710,  "I3": 14.8, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 1},
+    {"id": "HOG-11", "nombre": "Nadia T.",            "edad": 44, "composicion": "Sola, desempleada larga duración",
      "desc": "ISEE bajo, sin ayudas formales. Sin cortes pero riesgo latente alto.",
-     "I1": 580,  "I2": 1, "I3": 16.3, "I4": 0, "I11": 0, "I12": 1, "ground_truth": 1},
+     "I1": 580,  "I3": 16.3, "I4": 0, "I11": 0, "I12": 1, "ground_truth": 1},
+    {"id": "HOG-12", "nombre": "Giuseppina R.",       "edad": 62, "composicion": "Sola, ex-trabajadora informal",
+     "desc": "Sin pensión aún. Pequeños trabajos de limpieza. Calefacción de gas muy cara en invierno.",
+     "I1": 670,  "I3": 17.1, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 1},
+    {"id": "HOG-13", "nombre": "Djamila K.",          "edad": 36, "composicion": "Pareja, 2 hijos, marido en paro",
+     "desc": "Ingresos solo de ella, contrato temporal. Bonus energia activo. Riesgo de impago.",
+     "I1": 760,  "I3": 15.9, "I4": 0, "I11": 1, "I12": 1, "ground_truth": 1},
+    {"id": "HOG-14", "nombre": "Rosario e Maria C.",  "edad": 68, "composicion": "Pareja pensionistas, 1 hijo discapacitado en casa",
+     "desc": "Hijo adulto con discapacidad severa. Pensiones combinadas bajas. Gasto eléctrico muy alto.",
+     "I1": 780,  "I3": 20.4, "I4": 0, "I11": 1, "I12": 0, "ground_truth": 1},
+    {"id": "HOG-15", "nombre": "Leila M.",            "edad": 42, "composicion": "Sola, 1 hijo adolescente",
+     "desc": "Separada recientemente. Alquiler nuevo, ingresos reducidos. Primer impago hace 2 meses.",
+     "I1": 690,  "I3": 18.7, "I4": 1, "I11": 0, "I12": 0, "ground_truth": 1},
+    {"id": "HOG-16", "nombre": "Calogero F.",         "edad": 55, "composicion": "Solo, desempleo estructural",
+     "desc": "Nunca ha tenido contrato indefinido. Economía sumergida. Sin acceso a ayudas por falta de ISEE actualizado.",
+     "I1": 610,  "I3": 13.2, "I4": 1, "I11": 0, "I12": 0, "ground_truth": 1},
+
+    # ── VULNERABILIDAD MEDIA-ALTA (sobre umbral pero con señales de riesgo) ──
+    {"id": "HOG-17", "nombre": "Salvatore C.",        "edad": 58, "composicion": "Solo, trabajador precario",
+     "desc": "Ingresos bajos pero estables. Gasto energético moderado. Sin ayudas formales.",
+     "I1": 850,  "I3":  8.9, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
+    {"id": "HOG-18", "nombre": "Piero e Claudia M.",  "edad": 48, "composicion": "Pareja, 2 hijos adolescentes",
+     "desc": "Ambos con trabajo precario. ISEE sobre umbral pero carga energética elevada.",
+     "I1": 1120, "I3": 13.6, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
+    {"id": "HOG-19", "nombre": "Sonia P.",            "edad": 33, "composicion": "Sola, contrato parcial",
+     "desc": "Trabajo media jornada. ISEE sobre umbral por poco. Sin deudas. Situación frágil.",
+     "I1": 1080, "I3": 11.2, "I4": 0, "I11": 0, "I12": 1, "ground_truth": 0},
+    {"id": "HOG-20", "nombre": "Filippo e Serena R.", "edad": 52, "composicion": "Pareja, trabajo temporal",
+     "desc": "Ambos con contratos estacionales. ISEE alto en temporada pero ingresos intermitentes.",
+     "I1": 1150, "I3":  9.8, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
+    {"id": "HOG-21", "nombre": "Domenico A.",         "edad": 61, "composicion": "Solo, pensión anticipada",
+     "desc": "Pensión anticipada media. Piso en propiedad. Gasto energético contenido.",
+     "I1": 1200, "I3":  7.4, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
+    {"id": "HOG-22", "nombre": "Ylenia e Marco T.",   "edad": 38, "composicion": "Pareja, sin hijos, ambos empleados",
+     "desc": "Ingresos dobles pero ISEE elevado por bienes inmobiliarios declarados. Gasto energético normal.",
+     "I1": 1380, "I3":  6.9, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
+    {"id": "HOG-23", "nombre": "Antonino L.",         "edad": 47, "composicion": "Solo, autónomo irregular",
+     "desc": "Autónomo con ingresos muy variables. Año bueno: ISEE alto. Año malo: impago energía.",
+     "I1": 1090, "I3": 12.1, "I4": 1, "I11": 0, "I12": 1, "ground_truth": 1},
+    {"id": "HOG-24", "nombre": "Bruna C.",            "edad": 70, "composicion": "Sola, pensión media",
+     "desc": "Pensión media suficiente pero piso antiguo con alto consumo. Sin deudas.",
+     "I1": 1100, "I3": 14.3, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
+    {"id": "HOG-25", "nombre": "Ivan e Olena S.",     "edad": 43, "composicion": "Pareja inmigrante, 1 hijo",
+     "desc": "Ucranianos. Trabajo estable de él, ella cuidadora informal no remunerada. ISEE por encima del umbral.",
+     "I1": 1060, "I3": 10.8, "I4": 0, "I11": 0, "I12": 1, "ground_truth": 0},
+
+    # ── CASOS AMBIGUOS / FRONTERA ─────────────────────────────────────────────
+    {"id": "HOG-26", "nombre": "Carmelo e Ida B.",    "edad": 65, "composicion": "Pareja, jubilación parcial",
+     "desc": "Pensión parcial y pequeño negocio. ISEE justo en el umbral. Carga energética moderada.",
+     "I1": 1040, "I3": 10.1, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 1},
+    {"id": "HOG-27", "nombre": "Tiziana F.",          "edad": 50, "composicion": "Sola, cuidadora familiar no remunerada",
+     "desc": "Cuida a su madre con Alzheimer. Sin ingresos propios. ISEE bajo por economía familiar.",
+     "I1": 720,  "I3":  9.3, "I4": 0, "I11": 1, "I12": 0, "ground_truth": 1},
+    {"id": "HOG-28", "nombre": "Gaetano P.",          "edad": 35, "composicion": "Solo, ex-recluso, reinserción",
+     "desc": "Salido del sistema penitenciario hace 6 meses. Trabajo de reinserción. Sin historial crediticio.",
+     "I1": 680,  "I3":  8.1, "I4": 0, "I11": 1, "I12": 0, "ground_truth": 1},
+    {"id": "HOG-29", "nombre": "Lucia e figli",       "edad": 41, "composicion": "Madre sola, 1 hijo con TEA",
+     "desc": "Trabajo a tiempo parcial para cuidar a hijo con autismo. RdC activa. Carga eléctrica alta.",
+     "I1": 730,  "I3": 16.8, "I4": 0, "I11": 1, "I12": 1, "ground_truth": 1},
+    {"id": "HOG-30", "nombre": "Sebastiano M.",       "edad": 26, "composicion": "Solo, NEET",
+     "desc": "Ni estudia ni trabaja. Vive con ayuda de familiares. Sin ISEE propio declarado.",
+     "I1": 420,  "I3":  7.2, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 1},
+    {"id": "HOG-31", "nombre": "Grazia e Luigi C.",   "edad": 55, "composicion": "Pareja, ambos con trabajo estacional",
+     "desc": "Ingresos buenos en verano (turismo), muy bajos en invierno. ISEE promedio engañoso.",
+     "I1": 970,  "I3": 12.4, "I4": 1, "I11": 0, "I12": 0, "ground_truth": 1},
+    {"id": "HOG-32", "nombre": "Youssef A.",          "edad": 38, "composicion": "Solo, trabajador agrícola",
+     "desc": "Trabajo agrícola estacional. Alojamiento en cortijo incluido. ISEE bajo pero necesidades básicas cubiertas.",
+     "I1": 560,  "I3":  6.4, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
+    {"id": "HOG-33", "nombre": "Paola N.",            "edad": 59, "composicion": "Sola, enferma crónica",
+     "desc": "Fibromialgia severa. Incapacidad parcial reconocida. Gasto sanitario alto que reduce renta disponible.",
+     "I1": 800,  "I3": 17.9, "I4": 0, "I11": 1, "I12": 0, "ground_truth": 1},
+    {"id": "HOG-34", "nombre": "Emanuele e Sandra R.","edad": 51, "composicion": "Pareja, hijos independientes",
+     "desc": "Ambos con trabajo a tiempo parcial. ISEE limítrofe. Situación estable.",
+     "I1": 1050, "I3":  9.1, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
+
+    # ── SIN VULNERABILIDAD ECONÓMICA (sobre umbral, situación estable) ────────
+    {"id": "HOG-35", "nombre": "Giuseppe N.",         "edad": 29, "composicion": "Solo, empleado",
+     "desc": "Contrato fijo reciente. ISEE sobre umbral. Situación estabilizándose.",
+     "I1": 940,  "I3":  7.2, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
+    {"id": "HOG-36", "nombre": "Roberta e Franco L.", "edad": 44, "composicion": "Pareja, 2 hijos, clase media",
+     "desc": "Ambos empleados fijos. Piso en propiedad. Gasto energético controlado.",
+     "I1": 1680, "I3":  5.8, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
+    {"id": "HOG-37", "nombre": "Mario T.",            "edad": 53, "composicion": "Solo, funcionario",
+     "desc": "Funcionario municipal. Ingresos estables. Sin ninguna señal de vulnerabilidad.",
+     "I1": 1540, "I3":  4.9, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
+    {"id": "HOG-38", "nombre": "Daniela e Luca P.",   "edad": 37, "composicion": "Pareja joven, ambos empleados",
+     "desc": "Ambos con contratos indefinidos recientes. Piso de alquiler moderno. Sin deudas.",
+     "I1": 1420, "I3":  6.1, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
+    {"id": "HOG-39", "nombre": "Silvana R.",          "edad": 66, "composicion": "Sola, pensión media-alta",
+     "desc": "Pensión de empleada bancaria. Piso propio pagado. Gasto energético moderado.",
+     "I1": 1310, "I3":  7.3, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
+    {"id": "HOG-40", "nombre": "Carmelo G.",          "edad": 41, "composicion": "Solo, profesional liberal",
+     "desc": "Abogado con clientela estable. ISEE alto. Sin ninguna señal de riesgo.",
+     "I1": 2100, "I3":  3.2, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
+    {"id": "HOG-41", "nombre": "Nunzia e Aldo C.",    "edad": 60, "composicion": "Pareja, pensiones medias",
+     "desc": "Jubilados con pensiones dignas. Piso en propiedad. Viajes frecuentes.",
+     "I1": 1750, "I3":  5.1, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
+    {"id": "HOG-42", "nombre": "Federica M.",         "edad": 32, "composicion": "Sola, ingeniería",
+     "desc": "Contrato indefinido en empresa privada. Sin cargas. Ahorro mensual positivo.",
+     "I1": 1890, "I3":  4.4, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
+    {"id": "HOG-43", "nombre": "Orazio e Valeria B.", "edad": 49, "composicion": "Pareja, empresa familiar pequeña",
+     "desc": "Negocio de hostelería estable. Ingresos buenos. Sin deudas energéticas.",
+     "I1": 1600, "I3":  6.7, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
+
+    # ── CASOS ESPECIALES / PARADOJAS ─────────────────────────────────────────
+    {"id": "HOG-44", "nombre": "Roberto A.",          "edad": 48, "composicion": "Solo, desahucio reciente",
+     "desc": "ISEE aparentemente alto (año anterior bueno) pero desahuciado hace 2 meses. Ahora en albergue.",
+     "I1": 1100, "I3": 22.0, "I4": 1, "I11": 1, "I12": 0, "ground_truth": 1},
+    {"id": "HOG-45", "nombre": "Antonella e figli",   "edad": 43, "composicion": "Madre sola, 4 hijos",
+     "desc": "ISEE bajo por escala de equivalencia. En términos absolutos los ingresos son razonables para el número de miembros.",
+     "I1": 740,  "I3": 11.3, "I4": 0, "I11": 1, "I12": 1, "ground_truth": 1},
+    {"id": "HOG-46", "nombre": "Enzo F.",             "edad": 57, "composicion": "Solo, ex-adicción, recuperación",
+     "desc": "En programa de recuperación. Trabajo protegido. ISEE bajo pero situación mejorando.",
+     "I1": 620,  "I3":  9.7, "I4": 0, "I11": 1, "I12": 1, "ground_truth": 1},
+    {"id": "HOG-47", "nombre": "Miriam e Abebe T.",   "edad": 35, "composicion": "Pareja con permiso de residencia reciente",
+     "desc": "Ambos trabajando pero sin historial ISEE consolidado. Carga energética alta en piso compartido.",
+     "I1": 870,  "I3": 13.8, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 1},
+    {"id": "HOG-48", "nombre": "Lina V.",             "edad": 77, "composicion": "Anciana sola, heredera",
+     "desc": "ISEE alto por patrimonio inmobiliario heredado, pero pensión social mínima. Liquidez muy baja.",
+     "I1": 1250, "I3": 19.6, "I4": 1, "I11": 0, "I12": 0, "ground_truth": 1},
+    {"id": "HOG-49", "nombre": "Cristian e Alina P.", "edad": 30, "composicion": "Pareja joven, recién llegados",
+     "desc": "Rumaneses. Trabajan en logística. ISEE sobre umbral pero sin red de apoyo ni acceso a microcrédito.",
+     "I1": 1130, "I3":  8.3, "I4": 0, "I11": 0, "I12": 0, "ground_truth": 0},
+    {"id": "HOG-50", "nombre": "Tancredi M.",         "edad": 24, "composicion": "Solo, estudiante trabajador",
+     "desc": "Estudia y trabaja. Ingresos bajos pero temporales. Sin cargas familiares. Trayectoria ascendente.",
+     "I1": 760,  "I3":  8.8, "I4": 0, "I11": 0, "I12": 1, "ground_truth": 0},
 ]
 
 IND_KEYS   = ["I1", "I2", "I3", "I4", "I11", "I12"]
@@ -89,7 +220,7 @@ INIT_WEIGHTS = {"I1": 0.30, "I2": 0.25, "I3": 0.20, "I4": 0.10, "I11": 0.10, "I1
 
 def ind_norm(hh, k):
     if k == "I1":  return max(0.0, min(1.0, (1200 - hh["I1"]) / 800))
-    if k == "I2":  return float(hh["I2"])
+    if k == "I2":  return max(0.0, min(1.0, (1050 - hh["I1"]) / 1050))
     if k == "I3":  return max(0.0, min(1.0, (hh["I3"] - 5) / 25))
     if k == "I4":  return float(hh["I4"])
     if k == "I11": return float(hh["I11"])
@@ -172,11 +303,11 @@ class App(tk.Tk):
         nav = tk.Frame(self.hdr, bg=C["card"])
         nav.place(relx=1.0, x=-14, y=30, anchor="ne")
         tk.Button(nav, text="←", font=("Helvetica Neue", 13), bg=C["card"], fg=C["accent"],
-                  relief="flat", cursor="hand2", command=lambda: self._select((self.current_idx-1)%10)).pack(side="left")
+                  relief="flat", cursor="hand2", command=lambda: self._select((self.current_idx-1)%len(HOUSEHOLDS))).pack(side="left")
         self.lbl_nav = tk.Label(nav, text="", font=("Helvetica Neue", 10), bg=C["card"], fg=C["muted"])
         self.lbl_nav.pack(side="left", padx=4)
         tk.Button(nav, text="→", font=("Helvetica Neue", 13), bg=C["card"], fg=C["accent"],
-                  relief="flat", cursor="hand2", command=lambda: self._select((self.current_idx+1)%10)).pack(side="left")
+                  relief="flat", cursor="hand2", command=lambda: self._select((self.current_idx+1)%len(HOUSEHOLDS))).pack(side="left")
 
         tk.Frame(self.right, bg=C["border"], height=1).pack(fill="x")
 
@@ -193,32 +324,100 @@ class App(tk.Tk):
             self._canvas.itemconfig(self._cwin, width=self._canvas.winfo_width())
         ))
         self._canvas.bind("<Configure>", lambda e: self._canvas.itemconfig(self._cwin, width=e.width))
-        self._canvas.bind_all("<MouseWheel>", lambda e: self._canvas.yview_scroll(-1*(e.delta//120), "units"))
-        self._canvas.bind_all("<Button-4>",   lambda e: self._canvas.yview_scroll(-1, "units"))
-        self._canvas.bind_all("<Button-5>",   lambda e: self._canvas.yview_scroll(1, "units"))
+        self._canvas.bind("<MouseWheel>", lambda e: self._canvas.yview_scroll(-1*(e.delta//120), "units"))
+        self._canvas.bind("<Button-4>",   lambda e: self._canvas.yview_scroll(-1, "units"))
+        self._canvas.bind("<Button-5>",   lambda e: self._canvas.yview_scroll(1, "units"))
+        self.content.bind("<MouseWheel>", lambda e: self._canvas.yview_scroll(-1*(e.delta//120), "units"))
+        self.content.bind("<Button-4>",   lambda e: self._canvas.yview_scroll(-1, "units"))
+        self.content.bind("<Button-5>",   lambda e: self._canvas.yview_scroll(1, "units"))
+
+        def _bind_main_scroll(widget):
+            widget.bind("<MouseWheel>", lambda e: self._canvas.yview_scroll(-1*(e.delta//120), "units"))
+            widget.bind("<Button-4>",   lambda e: self._canvas.yview_scroll(-1, "units"))
+            widget.bind("<Button-5>",   lambda e: self._canvas.yview_scroll(1, "units"))
+        self._bind_main_scroll = _bind_main_scroll
 
     def _build_sidebar(self):
         for w in self.sidebar.winfo_children():
             w.destroy()
 
-        tk.Label(self.sidebar, text="SOCIAREM", font=("Helvetica Neue", 11, "bold"),
-                 bg=C["card"], fg=C["accent"]).pack(anchor="w", padx=16, pady=(18,0))
-        tk.Label(self.sidebar, text="Piloto Messina · P1",
-                 font=("Helvetica Neue", 9), bg=C["card"], fg=C["muted"]).pack(anchor="w", padx=16, pady=(0,10))
-        tk.Frame(self.sidebar, bg=C["border"], height=1).pack(fill="x")
+        # ── Cabecera fija ─────────────────────────────────────────────────────
+        top = tk.Frame(self.sidebar, bg=C["card"])
+        top.pack(side="top", fill="x")
 
-        # fase badge
+        tk.Label(top, text="SOCIAREM", font=("Helvetica Neue", 11, "bold"),
+                 bg=C["card"], fg=C["accent"]).pack(anchor="w", padx=16, pady=(18,0))
+        tk.Label(top, text="Piloto Messina · P1",
+                 font=("Helvetica Neue", 9), bg=C["card"], fg=C["muted"]).pack(anchor="w", padx=16, pady=(0,10))
+        tk.Frame(top, bg=C["border"], height=1).pack(fill="x")
+
         phase_txt = "FASE 1 · Etiquetado" if self.phase == 1 else "FASE 2 · Ajuste de pesos"
         phase_col = C["accent"] if self.phase == 1 else C["accent2"]
-        tk.Label(self.sidebar, text=phase_txt, font=("Helvetica Neue", 9, "bold"),
-                 bg=C["card"], fg=phase_col).pack(anchor="w", padx=16, pady=(8,6))
-
-        tk.Label(self.sidebar, text="Hogares", font=("Helvetica Neue", 8, "bold"),
+        tk.Label(top, text=phase_txt, font=("Helvetica Neue", 9, "bold"),
+                 bg=C["card"], fg=phase_col).pack(anchor="w", padx=16, pady=(8,4))
+        tk.Label(top, text="Hogares", font=("Helvetica Neue", 8, "bold"),
                  bg=C["card"], fg=C["muted"]).pack(anchor="w", padx=16, pady=(0,4))
+
+        # ── Pie fijo (botón optimizar / volver) ───────────────────────────────
+        bottom = tk.Frame(self.sidebar, bg=C["card"])
+        bottom.pack(side="bottom", fill="x")
+        tk.Frame(bottom, bg=C["border"], height=1).pack(fill="x")
+
+        if self.phase == 1:
+            self.opt_btn = tk.Button(
+                bottom, text="⚡  Optimizar pesos",
+                font=("Helvetica Neue", 10, "bold"),
+                bg=C["accent2"], fg=C["text"],
+                relief="flat", cursor="hand2", padx=12, pady=7,
+                command=self._run_optimization
+            )
+            self.opt_btn.pack(fill="x", padx=8, pady=(6,4))
+            self.progress_lbl = tk.Label(bottom, text="",
+                                         font=("Helvetica Neue", 9),
+                                         bg=C["card"], fg=C["muted"], wraplength=196)
+            self.progress_lbl.pack(anchor="w", padx=12, pady=(0,8))
+        else:
+            tk.Button(
+                bottom, text="← Volver a fase 1",
+                font=("Helvetica Neue", 9),
+                bg=C["card2"], fg=C["muted"],
+                relief="flat", cursor="hand2", padx=10, pady=5,
+                command=self._back_to_phase1
+            ).pack(fill="x", padx=8, pady=6)
+
+        # ── Lista scrollable ──────────────────────────────────────────────────
+        sb_canvas = tk.Canvas(self.sidebar, bg=C["card"], highlightthickness=0)
+        sb_vsb = tk.Scrollbar(self.sidebar, orient="vertical", command=sb_canvas.yview)
+        sb_canvas.configure(yscrollcommand=sb_vsb.set)
+        sb_vsb.pack(side="right", fill="y")
+        sb_canvas.pack(side="left", fill="both", expand=True)
+
+        sb_frame = tk.Frame(sb_canvas, bg=C["card"])
+        sb_win = sb_canvas.create_window((0, 0), window=sb_frame, anchor="nw")
+
+        sb_frame.bind("<Configure>", lambda e: (
+            sb_canvas.configure(scrollregion=sb_canvas.bbox("all")),
+            sb_canvas.itemconfig(sb_win, width=sb_canvas.winfo_width())
+        ))
+        sb_canvas.bind("<Configure>", lambda e: sb_canvas.itemconfig(sb_win, width=e.width))
+
+        # scroll con rueda solo cuando el cursor está sobre la sidebar
+        def _sb_scroll(e):
+            sb_canvas.yview_scroll(-1 * (e.delta // 120), "units")
+        def _sb_scroll_up(e):
+            sb_canvas.yview_scroll(-1, "units")
+        def _sb_scroll_down(e):
+            sb_canvas.yview_scroll(1, "units")
+
+        sb_canvas.bind("<MouseWheel>", _sb_scroll)
+        sb_canvas.bind("<Button-4>",   _sb_scroll_up)
+        sb_canvas.bind("<Button-5>",   _sb_scroll_down)
+        sb_frame.bind("<MouseWheel>",  _sb_scroll)
+        sb_frame.bind("<Button-4>",    _sb_scroll_up)
+        sb_frame.bind("<Button-5>",    _sb_scroll_down)
 
         self.sidebar_btns = []
         for i, hh in enumerate(HOUSEHOLDS):
-            # en fase 2 mostrar mini-score en sidebar
             extra = ""
             dot_col = C["muted"]
             if self.phase == 2 and self.opt_weights:
@@ -231,43 +430,24 @@ class App(tk.Tk):
                 if lbl == 1:   dot_col = C["danger"]
                 elif lbl == 0: dot_col = C["ok"]
 
+            fg_col = dot_col if self.expert_labels.get(hh["id"]) is not None else C["text"]
             btn = tk.Button(
-                self.sidebar,
+                sb_frame,
                 text=f"{hh['id']}  {hh['nombre']}{extra}",
                 font=("Helvetica Neue", 9),
                 anchor="w", padx=10, pady=5,
                 relief="flat", cursor="hand2",
                 bg=C["sel"] if i == self.current_idx else C["card"],
-                fg=dot_col if self.phase == 1 and self.expert_labels.get(hh["id"]) is not None else C["text"],
+                fg=fg_col,
                 activebackground=C["sel"], activeforeground=C["text"],
                 command=lambda idx=i: self._select(idx)
             )
             btn.pack(fill="x", padx=4)
+            # propagar scroll desde los botones también
+            btn.bind("<MouseWheel>", _sb_scroll)
+            btn.bind("<Button-4>",   _sb_scroll_up)
+            btn.bind("<Button-5>",   _sb_scroll_down)
             self.sidebar_btns.append(btn)
-
-        tk.Frame(self.sidebar, bg=C["border"], height=1).pack(fill="x", pady=8)
-
-        if self.phase == 1:
-            self.opt_btn = tk.Button(
-                self.sidebar, text="⚡  Optimizar pesos",
-                font=("Helvetica Neue", 10, "bold"),
-                bg=C["accent2"], fg=C["text"],
-                relief="flat", cursor="hand2", padx=12, pady=7,
-                command=self._run_optimization
-            )
-            self.opt_btn.pack(fill="x", padx=8, pady=(0,6))
-            self.progress_lbl = tk.Label(self.sidebar, text="",
-                                         font=("Helvetica Neue", 9),
-                                         bg=C["card"], fg=C["muted"], wraplength=196)
-            self.progress_lbl.pack(anchor="w", padx=12)
-        else:
-            tk.Button(
-                self.sidebar, text="← Volver a fase 1",
-                font=("Helvetica Neue", 9),
-                bg=C["card2"], fg=C["muted"],
-                relief="flat", cursor="hand2", padx=10, pady=5,
-                command=self._back_to_phase1
-            ).pack(fill="x", padx=8, pady=(0,4))
 
     # ── navegación ────────────────────────────────────────────────────────────
     def _select(self, idx):
@@ -278,7 +458,7 @@ class App(tk.Tk):
         self.lbl_name.configure(text=f"{hh['nombre']}  ·  {hh['edad']} años")
         self.lbl_comp.configure(text=hh["composicion"])
         self.lbl_desc.configure(text=hh["desc"])
-        self.lbl_nav.configure(text=f"{idx+1}/10")
+        self.lbl_nav.configure(text=f"{idx+1}/{len(HOUSEHOLDS)}")
         for w in self.content.winfo_children():
             w.destroy()
         if self.phase == 1:
@@ -286,7 +466,15 @@ class App(tk.Tk):
         else:
             self._render_phase2(hh)
 
-    def _current_weights(self):
+    def _propagate_scroll(self, widget):
+        """Propaga el scroll del canvas principal a todos los widgets hijos."""
+        widget.bind("<MouseWheel>", lambda e: self._canvas.yview_scroll(-1*(e.delta//120), "units"))
+        widget.bind("<Button-4>",   lambda e: self._canvas.yview_scroll(-1, "units"))
+        widget.bind("<Button-5>",   lambda e: self._canvas.yview_scroll(1, "units"))
+        for child in widget.winfo_children():
+            self._propagate_scroll(child)
+
+
         if self.live_weights:
             raw = {k: max(0.001, self.live_weights[k].get()) for k in IND_KEYS}
             t = sum(raw.values()) or 1
@@ -314,7 +502,7 @@ class App(tk.Tk):
             ("I1",  "Renta neta equiv.",     "primario",
              f"{hh['I1']} €/mes",   "< 780 €/mes → riesgo",      hh["I1"] < 780,       "DS2 · ISEE"),
             ("I2",  "Bajo umbral pobreza",   "primario",
-             "SÍ" if hh["I2"] else "NO",     "60 % mediana nacional",  bool(hh["I2"]),       "DS2 · ISEE"),
+             f"{int(hh['I1'] / 1050 * 100)} % del umbral",  "umbral: 1.050 €/mes equiv.",  hh["I1"] < 1050,  "DS2 · ISEE"),
             ("I3",  "Carga energética",      "secundario",
              f"{hh['I3']:.1f} %",  "> 10 % → alto riesgo",       hh["I3"] > 10,        "DS4 · DS14 · facturas"),
             ("I4",  "Impago / corte",        "secundario",
@@ -362,12 +550,15 @@ class App(tk.Tk):
                       ).pack(side="left", padx=(0,10))
 
         n_lbl = len(self.expert_labels)
-        status = f"{n_lbl}/10 hogares etiquetados"
-        scol = C["ok"] if n_lbl == 10 else C["muted"]
-        if n_lbl == 10:
+        n_total = len(HOUSEHOLDS)
+        status = f"{n_lbl}/{n_total} hogares etiquetados"
+        scol = C["ok"] if n_lbl == n_total else C["muted"]
+        if n_lbl == n_total:
             status += "  ·  ¡Listo para optimizar!"
         tk.Label(vc, text=status, font=("Helvetica Neue", 9),
                  bg=C["card"], fg=scol).pack(anchor="w", pady=(10,0))
+
+        self._propagate_scroll(self.content)
 
     def _ind_card(self, parent, iid, name, role, value, note, is_risk, source, row, col):
         is_pri = role == "primario"
@@ -402,14 +593,18 @@ class App(tk.Tk):
                  bg=C["card"], fg=C["muted"], anchor="w").pack(fill="x")
 
     def _set_expert(self, hid, val):
+        was_unlabeled = hid not in self.expert_labels
         self.expert_labels[hid] = val
         n = len(self.expert_labels)
         if hasattr(self, "progress_lbl"):
             self.progress_lbl.configure(
-                text=f"{n}/10 etiquetados" + ("\n¡Listo!" if n == 10 else ""),
-                fg=C["ok"] if n == 10 else C["muted"]
+                text=f"{n}/{len(HOUSEHOLDS)} etiquetados" + ("\n¡Listo!" if n == len(HOUSEHOLDS) else ""),
+                fg=C["ok"] if n == len(HOUSEHOLDS) else C["muted"]
             )
-        self._select(self.current_idx)
+        if was_unlabeled and self.current_idx < len(HOUSEHOLDS) - 1:
+            self._select(self.current_idx + 1)
+        else:
+            self._select(self.current_idx)
 
     def _run_optimization(self):
         if len(self.expert_labels) < 5:
@@ -488,7 +683,7 @@ class App(tk.Tk):
 
         ind_data = [
             ("I1",  f"{hh['I1']} €/mes",           hh["I1"] < 780,  "< 780 €/mes → riesgo"),
-            ("I2",  "SÍ" if hh["I2"] else "NO",    bool(hh["I2"]),  "60 % mediana nacional"),
+            ("I2",  f"{int(hh['I1'] / 1050 * 100)} % umbral",  hh["I1"] < 1050,   "umbral: 1.050 €/mes"),
             ("I3",  f"{hh['I3']:.1f} %",            hh["I3"] > 10,   "> 10 % → riesgo"),
             ("I4",  "SÍ" if hh["I4"] else "NO",    bool(hh["I4"]),  "Últimos 12 meses"),
             ("I11", "SÍ" if hh["I11"] else "NO",   bool(hh["I11"]), "Bonus energía / RdC"),
@@ -571,6 +766,8 @@ class App(tk.Tk):
             tk.Label(ri, text="✓" if correct else "✗",
                      font=("Helvetica Neue", 12, "bold"),
                      bg=row_bg, fg=C["ok"] if correct else C["danger"]).pack(side="left", padx=(4,0))
+
+        self._propagate_scroll(self.content)
 
     def _ind_row_phase2(self, parent, hh, iid, val, is_risk, note, weights, bg, px):
         rc = C["danger"] if is_risk else C["ok"]
